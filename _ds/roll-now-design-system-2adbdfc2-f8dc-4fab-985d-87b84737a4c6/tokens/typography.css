@@ -1,0 +1,50 @@
+/* Roll Now — Type tokens */
+
+:root {
+  --font-display: "Bebas Neue", "Anton", sans-serif;
+  --font-body: "Montserrat", -apple-system, "Segoe UI", sans-serif;
+
+  /* Display (Bebas Neue) — headlines, hero numerals, badges. Wide letter-spacing reads best. */
+  --display-xl-size: 88px;
+  --display-xl-line: 0.92; /* @kind other */
+  --display-xl-tracking: 0.01em;
+
+  --display-lg-size: 64px;
+  --display-lg-line: 0.94; /* @kind other */
+  --display-lg-tracking: 0.01em;
+
+  --display-md-size: 44px;
+  --display-md-line: 1.0; /* @kind other */
+  --display-md-tracking: 0.02em;
+
+  --display-sm-size: 32px;
+  --display-sm-line: 1.05; /* @kind other */
+  --display-sm-tracking: 0.02em;
+
+  /* Body (Montserrat) */
+  --text-xl-size: 22px;
+  --text-xl-line: 1.4;
+  --text-xl-weight: 600;
+
+  --text-lg-size: 18px;
+  --text-lg-line: 1.5;
+  --text-lg-weight: 500;
+
+  --text-md-size: 16px;
+  --text-md-line: 1.55;
+  --text-md-weight: 400;
+
+  --text-sm-size: 14px;
+  --text-sm-line: 1.5;
+  --text-sm-weight: 400;
+
+  --text-xs-size: 12px;
+  --text-xs-line: 1.4;
+  --text-xs-weight: 600;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}

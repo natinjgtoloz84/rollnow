@@ -1,0 +1,56 @@
+/* Roll Now — Color tokens
+   Palette: dopamine / high-saturation / colour-block brand.
+   Base hues first, semantic aliases second. */
+
+:root {
+  /* ---- Base palette ---- */
+  --red-600: #D40C2E;   /* brand primary — "Roll" red */
+  --red-700: #AD0924;
+  --red-100: #FBE0E4;
+
+  --ink-900: #1D1E2C;   /* brand primary dark — near-black navy */
+  --ink-700: #383A4E;
+  --ink-500: #5C5E75;
+  --ink-300: #9496AA;
+  --ink-100: #E4E4EA;
+
+  --green-500: #7DCD85;  /* accent — success / fresh */
+  --blue-500: #8390FA;   /* accent — info / playful */
+  --yellow-500: #FAC748; /* accent — highlight / energy */
+
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* ---- Semantic: surfaces ---- */
+  --surface-page: var(--white);
+  --surface-page-dark: var(--ink-900);
+  --surface-card: var(--white);
+  --surface-sunken: var(--ink-100);
+  --surface-brand: var(--red-600);
+  --surface-brand-dark: var(--ink-900);
+  --surface-overlay: rgba(29, 30, 44, 0.6);
+
+  /* ---- Semantic: text ---- */
+  --text-heading: var(--ink-900);
+  --text-body: var(--ink-700);
+  --text-muted: var(--ink-500);
+  --text-on-brand: var(--white);
+  --text-on-dark: var(--white);
+  --text-link: var(--red-600);
+  --text-link-hover: var(--red-700);
+
+  /* ---- Semantic: borders ---- */
+  --border-default: var(--ink-900);
+  --border-subtle: var(--ink-100);
+  --border-width-default: 2px;
+  --border-width-bold: 3px;
+
+  /* ---- Semantic: state colors ---- */
+  --state-success: var(--green-500);
+  --state-info: var(--blue-500);
+  --state-warning: var(--yellow-500);
+  --state-danger: var(--red-600);
+
+  /* ---- Semantic: focus ---- */
+  --focus-ring: var(--blue-500);
+}
