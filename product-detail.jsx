@@ -56,7 +56,7 @@ function ProductDetail() {
   // SEO: set dynamic title/description/canonical/OG + inject Product & Breadcrumb JSON-LD per product
   useEffectD(() => {
     if (!product) return;
-    const base = "https://www.rollnow.com.my"; // TODO: replace with your live domain
+    const base = "https://rollnow.vercel.app"; // TODO: replace with your live domain
     const p = product;
     const url = base + "/product-detail.html?id=" + encodeURIComponent(p.id);
     const desc = `${p.name} (${p.color}) — ${p.tagline} ${DRM(p.price)}. Buy inline skates from Roll Now Kuala Lumpur and check out on WhatsApp.`;

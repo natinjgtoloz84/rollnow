@@ -5,4 +5,4 @@ Disallow: /assets/
 Disallow: /checkout.html
 Disallow: /_ds/
 
-Sitemap: https://www.rollnow.com.my/sitemap.xml
+Sitemap: https://rollnow.vercel.app/sitemap.xml
