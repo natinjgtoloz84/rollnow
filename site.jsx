@@ -53,7 +53,7 @@ function Nav({ active }) {
       <nav className="rn-nav">
         <div className="rn-nav__inner">
           <a className="rn-nav__logo" href="index.html" aria-label="Roll Now home">
-            <img src="assets/logo.png" alt="Roll Now" />
+            <img src="assets/logo.png" alt="Roll Now — inline skate training in Kuala Lumpur" width="202" height="207" />
           </a>
           <div className="rn-nav__links">
             {NAV.map((n) => (
@@ -118,7 +118,7 @@ function Footer() {
         <div className="rn-foot-grid rn-foot">
           <div>
             <div className="rn-foot__logo" style={{ marginBottom: 16 }}>
-              <img src="assets/logo.png" alt="Roll Now" />
+              <img src="assets/logo.png" alt="Roll Now — inline skate training in Kuala Lumpur" width="202" height="207" />
             </div>
             <p style={{ color: "#B9BAC6", fontSize: 15, lineHeight: 1.6, maxWidth: 300, margin: "0 0 14px" }}>
               1-to-1 inline skate training in Kuala Lumpur. Flexible times, full gear, your pace.

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /assets/
+Disallow: /checkout.html
+Disallow: /_ds/
+
+Sitemap: https://www.rollnow.com.my/sitemap.xml

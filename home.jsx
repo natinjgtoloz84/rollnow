@@ -72,7 +72,8 @@ function GalleryStrip() {
         {doubled.map((p, i) => (
           <div key={i} className="rn-frame" style={{ width: p.w, transform: `rotate(${p.rot}deg)` }} aria-hidden={i >= photos.length}>
             <div className="rn-frame__pic" style={{ height: p.h }}>
-              <img src={p.src} alt={p.cap} loading="lazy" />
+              {/* SEO: descriptive, keyword-rich alt for every montage photo */}
+              <img src={p.src} alt={`${p.cap} — Roll Now inline skate training in Kuala Lumpur`} loading="lazy" />
             </div>
             <div className="rn-frame__cap">{p.cap}</div>
           </div>
@@ -109,7 +110,7 @@ function Home() {
               We turn nervous first-timers into confident skaters — one patient session at a time.
             </p>
             <p className="lead" style={{ margin: "22px auto 0", textAlign: "center" }}>
-              No group classes, no rushing, no judgment. Just focused coaching that fits your life and gets you rolling faster than you'd think.
+              No group classes, no rushing, no judgment. Just focused inline skate coaching that fits your life and gets you rolling faster than you'd think.
             </p>
           </div>
         </section>

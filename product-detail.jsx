@@ -53,7 +53,49 @@ function ProductDetail() {
   const [qty, setQty] = useStateD(1);
   const [toast, setToast] = useStateD(null);
 
-  useEffectD(() => { if (product) document.title = product.name + " — Roll Now Shop"; }, []);
+  // SEO: set dynamic title/description/canonical/OG + inject Product & Breadcrumb JSON-LD per product
+  useEffectD(() => {
+    if (!product) return;
+    const base = "https://www.rollnow.com.my"; // TODO: replace with your live domain
+    const p = product;
+    const url = base + "/product-detail.html?id=" + encodeURIComponent(p.id);
+    const desc = `${p.name} (${p.color}) — ${p.tagline} ${DRM(p.price)}. Buy inline skates from Roll Now Kuala Lumpur and check out on WhatsApp.`;
+    document.title = `${p.name} ${p.color} — Buy Inline Skates | Roll Now`;
+    const upsert = (selector, create) => {
+      let el = document.head.querySelector(selector);
+      if (!el) { el = create(); document.head.appendChild(el); }
+      return el;
+    };
+    const meta = (name, content, prop) => {
+      const key = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
+      const el = upsert(key, () => { const m = document.createElement("meta"); m.setAttribute(prop ? "property" : "name", name); return m; });
+      el.setAttribute("content", content);
+    };
+    meta("description", desc);
+    meta("og:title", document.title, true);
+    meta("og:description", desc, true);
+    meta("og:url", url, true);
+    meta("og:image", base + "/" + p.img, true);
+    meta("twitter:title", document.title);
+    meta("twitter:description", desc);
+    const canon = upsert('link[rel="canonical"]', () => { const l = document.createElement("link"); l.rel = "canonical"; return l; });
+    canon.setAttribute("href", url);
+    const old = document.getElementById("ld-product");
+    if (old) old.remove();
+    const s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.id = "ld-product";
+    s.textContent = JSON.stringify([
+      { "@context": "https://schema.org", "@type": "Product", name: `${p.name} ${p.color}`, image: base + "/" + p.img,
+        description: p.tagline, brand: { "@type": "Brand", name: "Rollerblade" }, category: p.category,
+        offers: { "@type": "Offer", priceCurrency: "MYR", price: p.price, availability: "https://schema.org/InStock", url } },
+      { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: base + "/" },
+        { "@type": "ListItem", position: 2, name: "Shop", item: base + "/products.html" },
+        { "@type": "ListItem", position: 3, name: p.name } ] },
+    ]);
+    document.head.appendChild(s);
+  }, []);
 
   if (!product) return <NotFound />;
   const p = product;
